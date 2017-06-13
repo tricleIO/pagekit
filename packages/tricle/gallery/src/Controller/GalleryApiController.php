@@ -113,8 +113,8 @@ class GalleryApiController
             //delete pictures
             $images = Image::query()->where(['gallery_id' => $gallery->id])->get();
             foreach ($images as $image) {
-                unlink('storage/shw-gallery/'.$image->filename);
-                unlink('storage/shw-gallery/thumbnails/tn_'.$image->filename);
+                unlink('public/tricle-gallery/'.$image->filename);
+                unlink('public/tricle-gallery/thumbnails/tn_'.$image->filename);
                 $image->delete();
             }
             $gallery->delete();
@@ -183,7 +183,7 @@ class GalleryApiController
         if (!$id || !$gallery = Gallery::find($id)) {
             App::abort(404, __('Gallery not found.'));
         }
-        $path = 'storage/shw-gallery';
+        $path = 'public/tricle-gallery';
         if (!file_exists($path)) {
             mkdir($path, 0755);
             mkdir($path.'/thumbnails', 0755);
@@ -228,7 +228,7 @@ class GalleryApiController
         if (!$id || !$gallery = Gallery::where(compact('id'))->related('images')->first()) {
             App::abort(404, __('Gallery not found.'));
         }
-        $path = 'storage/shw-gallery';
+        $path = 'public/tricle-gallery';
 
         foreach ($gallery->images as $image) {
             $this->createThumbnail($path, $image->filename);

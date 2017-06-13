@@ -49,8 +49,8 @@ class ImageApiController
                 App::abort(400, __('Access denied.'));
             }
 
-            unlink('storage/shw-gallery/'.$image->filename);
-            unlink('storage/shw-gallery/thumbnails/tn_'.$image->filename);
+            unlink('public/tricle-gallery/'.$image->filename);
+            unlink('public/tricle-gallery/thumbnails/tn_'.$image->filename);
 
             $image->delete();
 

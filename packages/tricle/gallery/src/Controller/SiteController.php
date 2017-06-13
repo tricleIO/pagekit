@@ -104,7 +104,7 @@ class SiteController
                 'article:author'         => $gallery->user->name,
                 'og:title'               => $gallery->get('meta.og:title') ?: $gallery->title,
                 'og:description'         => $description,
-                'og:image'               => App::url()->getStatic('/storage/shw-gallery/thumbnails/tn_'.$image->filename, [], 0),
+                'og:image'               => App::url()->getStatic('/public/tricle-gallery/thumbnails/tn_'.$image->filename, [], 0),
             ],
             'shwGallery' => $this->gallery,
             'gallery'    => $gallery,
