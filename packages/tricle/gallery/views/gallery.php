@@ -34,22 +34,17 @@
         <h2 class="title pb-3"><?= $gallery->title ?></h2>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4">
-                    <div class="gallery__item">
-                        <img src="//placehold.it/600x280" class="img-fluid" alt="">
-                        <div class="gallery__item-title">
-                            <span class="date">22.10.2017</span>
-                            Detsky den holesovice
-                        </div>
-                    </div>
-                </div>
                 <?php foreach ($images as $image): ?>
                     <div class="col-4">
                         <div class="gallery__item">
-                            <img src="//placehold.it/600x280" class="img-fluid" alt="">
+                            <a href="<?= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?>"
+                               data-uk-lightbox="{group:'gallery'}" title="<?= $image->title ?>">
+                                <img
+                                    src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?>"
+                                    class="img-fluid" alt="">
+                            </a>
                             <div class="gallery__item-title">
-                                <span class="date">22.10.2017</span>
-                                Detsky den holesovice
+                                <span class="date"></span>
                             </div>
                         </div>
                     </div>
@@ -73,27 +68,27 @@
 <script src="/public/js/webScripts.js"></script>
 </body>
 </html>
+<!---->
+<?php //if ($shwGallery->config('gallery.back_button')): ?>
+<!--    <a class="uk-button" href="--><?//= $view->url('@gallery') ?><!--">--><?//= __('back') ?><!--</a>-->
+<?php //endif; ?>
+<!---->
+<!--<h1>--><?//= $gallery->title ?><!--</h1>-->
+<!---->
+<?php //if ($gallery->photograph): ?>
+<!--    --><?//= __('Photograph') . ': ' . $gallery->photograph ?>
+<?php //endif; ?>
+<!---->
+<!--<p>--><?//= $gallery->description ?><!--</p>-->
 
-<?php if ($shwGallery->config('gallery.back_button')): ?>
-    <a class="uk-button" href="<?= $view->url('@gallery') ?>"><?= __('back') ?></a>
-<?php endif; ?>
-
-<h1><?= $gallery->title ?></h1>
-
-<?php if ($gallery->photograph): ?>
-    <?= __('Photograph') . ': ' . $gallery->photograph ?>
-<?php endif; ?>
-
-<p><?= $gallery->description ?></p>
-
-<ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-    <?php foreach ($images as $image): ?>
-        <li class="uk-text-center">
-            <a href="<?= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?>"
-               data-uk-lightbox="{group:'gallery'}" title="<?= $image->title ?>">
-                <img src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?>"
-                     alt="<?= $image->title ?>"/>
-            </a>
-        </li>
-    <?php endforeach ?>
-</ul>
+<!--<ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>-->
+<!--    --><?php //foreach ($images as $image): ?>
+<!--        <li class="uk-text-center">-->
+<!--            <a href="--><?//= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?><!--"-->
+<!--               data-uk-lightbox="{group:'gallery'}" title="--><?//= $image->title ?><!--">-->
+<!--                <img src="--><?//= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?><!--"-->
+<!--                     alt="--><?//= $image->title ?><!--"/>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    --><?php //endforeach ?>
+<!--</ul>-->
