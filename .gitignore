@@ -1,4 +1,3 @@
-**/app/bundle/**/*.js
 /app/vendor/*
 /app/assets/*
 !/app/assets/codemirror
