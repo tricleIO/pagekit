@@ -20,6 +20,7 @@ return [
                 $table->addColumn('status', 'smallint');
                 $table->addColumn('data', 'json_array', ['notnull' => false]);
                 $table->addColumn('roles', 'simple_array', ['notnull' => false]);
+                $table->addColumn('password', 'integer', ['notnull' => true]);
                 $table->addColumn('modified', 'datetime');
                 $table->setPrimaryKey(['id']);
             });

@@ -56,6 +56,9 @@ class Gallery implements \JsonSerializable
     /** @Column(type="datetime") */
     public $modified;
 
+    /** @Column(type="integer") */
+    public $password;
+
     /**
      * @BelongsTo(targetEntity="Pagekit\User\Model\User", keyFrom="user_id")
      */
@@ -104,6 +107,22 @@ class Gallery implements \JsonSerializable
     public function isAccessible(User $user = null)
     {
         return $this->isPublished() && $this->hasAccess($user ?: App::user());
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
     /**
