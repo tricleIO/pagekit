@@ -1,0 +1,25 @@
+{
+    "name": "tricle/gallery",
+    "type": "pagekit-extension",
+    "version": "0.2.6",
+    "title": "Tricle Gallery",
+    "description": "A extension to manage your pictures",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "stfnhmplr",
+            "email": "info@himpler.com",
+            "homepage": "http://himpler.com"
+        }
+    ],
+    "require": {
+        "gregwar/image": "2.*"
+    },
+    "extra": {
+        "icon": "icon.svg",
+        "scripts": "scripts.php"
+    },
+    "archive": {
+        "exclude": ["node_modules", "!/app", "!/vendor", "composer.lock"]
+    }
+}
