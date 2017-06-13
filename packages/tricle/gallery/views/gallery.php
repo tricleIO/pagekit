@@ -68,7 +68,7 @@
 <script src="/public/js/webScripts.js"></script>
 </body>
 </html>
-<!---->
+
 <?php //if ($shwGallery->config('gallery.back_button')): ?>
 <!--    <a class="uk-button" href="--><?//= $view->url('@gallery') ?><!--">--><?//= __('back') ?><!--</a>-->
 <?php //endif; ?>
