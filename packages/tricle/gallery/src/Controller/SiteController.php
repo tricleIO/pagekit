@@ -97,22 +97,26 @@ class SiteController
 
         $hasAccess = false;
 
-        if ($request->request->get("char1") != null
-            && $request->request->get("char2") != null
-            && $request->request->get("char3") != null
-            && $request->request->get("char4") != null
-            && $request->request->get("char5") != null
-            && $request->request->get("char6") != null
-        ) {
-            if (intval($request->request->get("char1") == intval($gallery->password[0]))
-                && intval($request->request->get("char2") == intval($gallery->password[1]))
-                && intval($request->request->get("char3") == intval($gallery->password[2]))
-                && intval($request->request->get("char4") == intval($gallery->password[3]))
-                && intval($request->request->get("char5") == intval($gallery->password[4]))
-                && intval($request->request->get("char6") == intval($gallery->password[5]))
+        if ($gallery->password != null) {
+            if ($request->request->get("char1") != null
+                && $request->request->get("char2") != null
+                && $request->request->get("char3") != null
+                && $request->request->get("char4") != null
+                && $request->request->get("char5") != null
+                && $request->request->get("char6") != null
             ) {
-                $hasAccess = true;
+                if (intval($request->request->get("char1") == intval($gallery->password[0]))
+                    && intval($request->request->get("char2") == intval($gallery->password[1]))
+                    && intval($request->request->get("char3") == intval($gallery->password[2]))
+                    && intval($request->request->get("char4") == intval($gallery->password[3]))
+                    && intval($request->request->get("char5") == intval($gallery->password[4]))
+                    && intval($request->request->get("char6") == intval($gallery->password[5]))
+                ) {
+                    $hasAccess = true;
+                }
             }
+        } else {
+            $hasAccess = true;
         }
 
         return [
