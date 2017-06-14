@@ -1,23 +1,48 @@
-<?php $view->script('minigallery', 'gallery:app/bundle/slideshow.js', ['uikit', 'uikit-slideshow']) ?>
+<section class="gallery text-center">
+    <h2 class="title pb-3"><?= $gallery->title ?></h2>
+    <div class="container-fluid">
+        <div class="row">
+            <?php foreach ($images as $image): ?>
+                <div class="col-4">
+                    <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">
+                        <div class="gallery__item">
+                            <img
+                                src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?>"
+                                alt="<?= $image->title ?>" class="img-fluid"/>
+                            <div class="gallery__item-title">
+                                <span class="date"></span>
+                                <!--                            Detsky den holesovice-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+</section>
 
-<div class="uk-slidenav-position uk-width-large-3-4 uk-container-center"
-     data-uk-slideshow="">
-    <h3 class="uk-margin-remove"><?= $gallery->title ?></h3>
-    <ul class="uk-slideshow">
-        <?php foreach ($images as $image): ?>
-        <li>
-            <img src="<?= $view->url()->getStatic('public/tricle-gallery/'.$image->filename) ?>" alt="<?=$image->title?>" />
-        </li>
-        <?php endforeach ?>
-    </ul>
-    <?php if (count($images) > 1): ?>
-    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
-    <?php endif ?>
-    <?php if ($gallery->description) : ?>
-        <p class="uk-margin-remove"><?= $gallery->description ?></p>
-    <?php endif ?>
-    <?php if ($attributes['showLink']) : ?>
-        <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>"><?= __('more') ?> <i class="uk-icon uk-icon-arrow-right"></i></a>
-    <?php endif ?>
-</div>
+<?php //$view->script('minigallery', 'gallery:app/bundle/slideshow.js', ['uikit', 'uikit-slideshow']) ?>
+<!---->
+<!--<div class="uk-slidenav-position uk-width-large-3-4 uk-container-center"-->
+<!--     data-uk-slideshow="">-->
+<!--    <h3 class="uk-margin-remove">--><? //= $gallery->title ?><!--</h3>-->
+<!--    <ul class="uk-slideshow">-->
+<!--        --><?php //foreach ($images as $image): ?>
+<!--            <li>-->
+<!--                <img src="--><? //= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?><!--"-->
+<!--                     alt="--><? //= $image->title ?><!--"/>-->
+<!--            </li>-->
+<!--        --><?php //endforeach ?>
+<!--    </ul>-->
+<!--    --><?php //if (count($images) > 1): ?>
+<!--        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>-->
+<!--        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>-->
+<!--    --><?php //endif ?>
+<!--    --><?php //if ($gallery->description) : ?>
+<!--        <p class="uk-margin-remove">--><? //= $gallery->description ?><!--</p>-->
+<!--    --><?php //endif ?>
+<!--    --><?php //if ($attributes['showLink']) : ?>
+<!--        <a href="--><? //= $view->url('@gallery/id', ['id' => $gallery->id]) ?><!--">--><? //= __('more') ?><!-- <i-->
+<!--                class="uk-icon uk-icon-arrow-right"></i></a>-->
+<!--    --><?php //endif ?>
+<!--</div>-->

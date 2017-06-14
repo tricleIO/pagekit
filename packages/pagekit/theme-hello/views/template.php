@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/public/css/gallery.css">
+    <?= $view->render('head') ?>
 </head>
 <body>
 
