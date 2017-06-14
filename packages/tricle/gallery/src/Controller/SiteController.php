@@ -119,6 +119,10 @@ class SiteController
             $hasAccess = true;
         }
 
+        if (!$hasAccess) {
+            $images = null;
+        }
+
         return [
             '$view' => [
                 'title' => __($gallery->title),
