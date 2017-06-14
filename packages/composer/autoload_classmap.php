@@ -17,4 +17,5 @@ return array(
     'Gregwar\\Image\\Source\\File' => $vendorDir . '/gregwar/image/Gregwar/Image/Source/File.php',
     'Gregwar\\Image\\Source\\Resource' => $vendorDir . '/gregwar/image/Gregwar/Image/Source/Resource.php',
     'Gregwar\\Image\\Source\\Source' => $vendorDir . '/gregwar/image/Gregwar/Image/Source/Source.php',
+    'abeautifulsite\\SimpleImage' => $vendorDir . '/abeautifulsite/simpleimage/src/abeautifulsite/SimpleImage.php',
 );

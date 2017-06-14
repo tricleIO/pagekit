@@ -9776,3 +9776,7 @@ footer {
     margin: 0; }
 
 /*# sourceMappingURL=webStyles.css.map*/
+
+h1.uk-article-title {
+  display: none;
+}

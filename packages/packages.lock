@@ -4,9 +4,85 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95aa26c870e815b428606ae4ce0bd814",
-    "content-hash": "7af3258b4de6d6f54557c6c5af5e65a2",
+    "hash": "2626a6e6bc4974397eb99fa7fc60343c",
+    "content-hash": "33fbb2bc2cbddecd0800ad233db1947c",
     "packages": [
+        {
+            "name": "abeautifulsite/simpleimage",
+            "version": "2.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claviska/SimpleImage.git",
+                "reference": "5be7b5c912b94b85b20e423b9b8bd4680ccaa53b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/5be7b5c912b94b85b20e423b9b8bd4680ccaa53b",
+                "reference": "5be7b5c912b94b85b20e423b9b8bd4680ccaa53b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "abeautifulsite": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nazar Mokrynskyi",
+                    "email": "nazar@mokrynskyi.com",
+                    "homepage": "http://cleverstyle.org/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Cory LaViska",
+                    "homepage": "http://www.abeautifulsite.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class that simplifies working with images",
+            "time": "2015-08-08 06:11:41"
+        },
+        {
+            "name": "bixie/portfolio",
+            "version": "1.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://pagekit.com/package/bixie/portfolio/1.2.0.zip",
+                "reference": null,
+                "shasum": "4b96fb64cf470eed48208e7ecb8e7e82f0533930"
+            },
+            "require": {
+                "abeautifulsite/simpleimage": "2.5.*"
+            },
+            "type": "pagekit-extension",
+            "extra": {
+                "icon": "icon.svg",
+                "scripts": "scripts.php"
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bixie",
+                    "email": "info@bixie.org",
+                    "homepage": "http://portfolio.bixie.org"
+                }
+            ],
+            "description": "Create a beautiful portfolio in your Pagekit site"
+        },
         {
             "name": "gregwar/image",
             "version": "v2.0.4",
@@ -49,6 +125,31 @@
                 "image"
             ],
             "time": "2013-10-18 13:33:31"
+        },
+        {
+            "name": "pagekit/theme-hello",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://pagekit.com/package/pagekit/theme-hello/1.0.3.zip",
+                "reference": null,
+                "shasum": "aab3768ba77de8063e8ee38cadfe8839b6dfb509"
+            },
+            "type": "pagekit-theme",
+            "extra": {
+                "image": "image.jpg"
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pagekit",
+                    "email": "info@pagekit.com",
+                    "homepage": "http://pagekit.com"
+                }
+            ],
+            "description": "A blueprint to develop your own themes."
         },
         {
             "name": "tricle/gallery",
