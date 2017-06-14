@@ -56,7 +56,7 @@ class Gallery implements \JsonSerializable
     /** @Column(type="datetime") */
     public $modified;
 
-    /** @Column(type="integer") */
+    /** @Column(type="string") */
     public $password;
 
     /**

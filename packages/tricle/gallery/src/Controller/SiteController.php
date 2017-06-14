@@ -3,6 +3,7 @@
 namespace Tricle\Gallery\Controller;
 
 use Pagekit\Application as App;
+use Symfony\Component\HttpFoundation\Request;
 use Tricle\Gallery\Model\Gallery;
 use Tricle\Gallery\Model\Image;
 
@@ -51,26 +52,26 @@ class SiteController
 
         return [
             '$view' => [
-                'title'     => __('Galleries'),
-                'name'      => 'gallery/galleries.php',
+                'title' => __('Galleries'),
+                'name' => 'gallery/galleries.php',
                 'link:feed' => [
-                    'rel'   => 'alternate',
-                    'href'  => App::url('@blog/feed'),
+                    'rel' => 'alternate',
+                    'href' => App::url('@blog/feed'),
                     'title' => App::module('system/site')->config('title'),
                     //'type' => App::feed()->create($this->gallery->config('feed.type'))->getMIMEType()
                 ],
             ],
             'shwGallery' => $this->gallery,
-            'galleries'  => $galleries,
-            'total'      => $total,
-            'page'       => $page,
+            'galleries' => $galleries,
+            'total' => $total,
+            'page' => $page,
         ];
     }
 
     /**
      * @Route("/{id}", name="id")
      */
-    public function galleryAction($id)
+    public function galleryAction($id, Request $request)
     {
         if (!$gallery = Gallery::where(['id = ?', 'status = ?'], [$id, Gallery::STATUS_PUBLISHED])->related('user')->first()) {
             App::abort(404, __('Gallery not found!'));
@@ -85,7 +86,7 @@ class SiteController
         $description = $gallery->get('meta.og:description');
         if (!$description) {
             $description = strip_tags($gallery->description);
-            $description = rtrim(mb_substr($description, 0, 150), " \t\n\r\0\x0B.,").'...';
+            $description = rtrim(mb_substr($description, 0, 150), " \t\n\r\0\x0B.,") . '...';
         }
 
         if (!$images = Image::query()->where(['gallery_id' => $gallery->id])->get()) {
@@ -94,21 +95,42 @@ class SiteController
 
         $image = array_values($images)[0];
 
+        $hasAccess = false;
+
+        if ($request->request->get("char1") != null
+            && $request->request->get("char2") != null
+            && $request->request->get("char3") != null
+            && $request->request->get("char4") != null
+            && $request->request->get("char5") != null
+            && $request->request->get("char6") != null
+        ) {
+            if (intval($request->request->get("char1") == intval($gallery->password[0]))
+                && intval($request->request->get("char2") == intval($gallery->password[1]))
+                && intval($request->request->get("char3") == intval($gallery->password[2]))
+                && intval($request->request->get("char4") == intval($gallery->password[3]))
+                && intval($request->request->get("char5") == intval($gallery->password[4]))
+                && intval($request->request->get("char6") == intval($gallery->password[5]))
+            ) {
+                $hasAccess = true;
+            }
+        }
+
         return [
             '$view' => [
-                'title'                  => __($gallery->title),
-                'name'                   => 'gallery/gallery.php',
-                'og:type'                => 'article',
+                'title' => __($gallery->title),
+                'name' => 'gallery/gallery.php',
+                'og:type' => 'article',
                 'article:published_time' => $gallery->date->format(\DateTime::ATOM),
-                'article:modified_time'  => $gallery->modified->format(\DateTime::ATOM),
-                'article:author'         => $gallery->user->name,
-                'og:title'               => $gallery->get('meta.og:title') ?: $gallery->title,
-                'og:description'         => $description,
-                'og:image'               => App::url()->getStatic('/public/tricle-gallery/thumbnails/tn_'.$image->filename, [], 0),
+                'article:modified_time' => $gallery->modified->format(\DateTime::ATOM),
+                'article:author' => $gallery->user->name,
+                'og:title' => $gallery->get('meta.og:title') ?: $gallery->title,
+                'og:description' => $description,
+                'og:image' => App::url()->getStatic('/public/tricle-gallery/thumbnails/tn_' . $image->filename, [], 0),
             ],
             'shwGallery' => $this->gallery,
-            'gallery'    => $gallery,
-            'images'     => $images,
+            'gallery' => $gallery,
+            'images' => $images,
+            'hasAccess' => $hasAccess
         ];
     }
 }
