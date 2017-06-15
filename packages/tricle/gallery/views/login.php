@@ -58,6 +58,6 @@
         </section>
     </main>
 
-    <script src="../../build/webScripts.js"></script>
+    <script src="/public/js/webScripts.js"></script>
 </body>
 </html>

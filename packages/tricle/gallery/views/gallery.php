@@ -1,26 +1,27 @@
 <?php if ($hasAccess) : ?>
-    <section class="gallery text-center">
-        <h2 class="title pb-3"><?= $gallery->title ?></h2>
-        <div class="container-fluid">
-            <div class="row">
-                <?php foreach ($images as $image): ?>
-                    <div class="col-4">
-                        <div class="gallery__item">
-                            <a href="<?= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?>"
-                               data-uk-lightbox="{group:'gallery'}" title="<?= $image->title ?>">
-                                <img
-                                    src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?>"
-                                    class="img-fluid" alt="">
-                            </a>
-                            <div class="gallery__item-title">
-                                <span class="date"></span>
-                            </div>
-                        </div>
+<section class="gallery text-center">
+    <h1 class="title pb-3"><?= $gallery->title ?></h1>
+    <div class="container-fluid">
+        <div class="row gallery__slider">
+            <div class="col-1">
+                <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>?image-order=<?= $prevImageOrder ?>"><i class="icon icon-chevron-left"></i></a>
+            </div>
+            <div class="col-10">
+                <div class="">
+                    <img src="<?= $view->url()->getStatic('public/tricle-gallery/' . $chosenImage->filename) ?>" class="img-fluid" alt="">
+                    <div class="gallery__item-title">
+                        <span class="date"></span>
                     </div>
-                <?php endforeach ?>
+                </div>
+            </div>
+            <div class="col-1">
+                <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>?image-order=<?= $nextImageOrder ?>"><i class="icon icon-chevron-right"></i></a>
             </div>
         </div>
-    </section>
+        <br><br><br><br><br><br>
+
+    </div>
+</section>
 <?php else: ?>
     <section class="login">
         <div class="bg" style="background-image: url('/public/img/login-bg.jpg');"></div>
@@ -48,4 +49,4 @@
             </div>
         </form>
     </section>
-<? endif; ?>
+<?php endif; ?>

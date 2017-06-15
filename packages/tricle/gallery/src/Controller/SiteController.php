@@ -119,9 +119,32 @@ class SiteController
             $hasAccess = true;
         }
 
-        if (!$hasAccess) {
-            $images = null;
+//        if (!$hasAccess) {
+//            $images = null;
+//        }
+
+        $chosenImage = null;
+        $imageOrder = intval($request->query->get("image-order"));
+        if ($imageOrder == null) {
+            $imageOrder = 0;
         }
+
+        $it = 0;
+        foreach ($images as $currentImage) {
+            if ($it == $imageOrder) {
+                $chosenImage = $currentImage;
+                break;
+            }
+            $it++;
+        }
+
+        $imageCount = count($images);
+
+        $prevImageOrder = $imageOrder-1;
+        if ($prevImageOrder < 0) {
+            $prevImageOrder = $imageCount - 1;
+        }
+        $nextImageOrder = ($imageOrder+1) % $imageCount;
 
         return [
             '$view' => [
@@ -138,7 +161,12 @@ class SiteController
             'shwGallery' => $this->gallery,
             'gallery' => $gallery,
             'images' => $images,
-            'hasAccess' => $hasAccess
+            'hasAccess' => $hasAccess,
+            'imageOrder' => $imageOrder,
+            'chosenImage' => $chosenImage,
+            'imageCount' => $imageCount,
+            'prevImageOrder' => $prevImageOrder,
+            'nextImageOrder' => $nextImageOrder
         ];
     }
 }
