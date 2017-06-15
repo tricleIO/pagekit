@@ -123,7 +123,8 @@ class SiteController
         }
 
         if (App::session()->has($hasAccessSessionAttributeName)
-            && App::session()->get($hasAccessSessionAttributeName)) {
+            && App::session()->get($hasAccessSessionAttributeName)
+        ) {
             $hasAccess = true;
         }
 
@@ -144,11 +145,11 @@ class SiteController
 
         $imageCount = count($images);
 
-        $prevImageOrder = $imageOrder-1;
+        $prevImageOrder = $imageOrder - 1;
         if ($prevImageOrder < 0) {
             $prevImageOrder = $imageCount - 1;
         }
-        $nextImageOrder = ($imageOrder+1) % $imageCount;
+        $nextImageOrder = ($imageOrder + 1) % $imageCount;
 
         return [
             '$view' => [
@@ -172,5 +173,64 @@ class SiteController
             'prevImageOrder' => $prevImageOrder,
             'nextImageOrder' => $nextImageOrder
         ];
+    }
+
+    /**
+     * @Route("/mail/mail")
+     */
+    public function mailAction(Request $request)
+    {
+        $name = $request->request->get("name");
+        $email = $request->request->get("email");
+        $tel = $request->request->get("tel");
+        $placeAndDate = $request->request->get("place-and-date");
+        $occasion = $request->request->get("subject");
+
+        $to = 'jan.merta@tricle.io';
+        $subject = 'Nová objednávka';
+        $message = $message =
+            '<html>' .
+            '<head>
+                <title>Nová objednávka</title>
+                </head>' .
+            '<body>' .
+            '<h1>Nová objednávka</h1><p>' .
+            '<b>Jméno:</b> ' . $name .
+            '<br><b>E-mail:</b> ' . $email .
+            '<br><b>Telefon:</b> ' . $tel .
+            '<br><b>Místo a datum:</b> ' . $placeAndDate .
+            '<br><b>Příležitost:</b> ' . $occasion .
+            '</p></body>';
+        '</html>';
+        $headers = 'From: info@photobee.cz' . "\r\n" .
+            'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
+//        mail("martin.plz@centrum.cz", $subject, $message, $headers);
+
+        $subject = 'Objednávka';
+        $message = $message =
+            '<html>' .
+            '<head>
+                <title>Objednávka</title>
+                </head>' .
+            '<body>' .
+            '<h1>Objednávka</h1><p>' .
+            'Vaše objednávka byla přijata do systému, vyčkejte až se Vám ozveme.</p><p>' .
+            '<b>Rekapitulace:</b><br>' .
+            '<b>Jméno:</b> ' . $name .
+            '<br><b>E-mail:</b> ' . $email .
+            '<br><b>Telefon:</b> ' . $tel .
+            '<br><b>Místo a datum:</b> ' . $placeAndDate .
+            '<br><b>Příležitost:</b> ' . $occasion .
+            '</p></body>';
+        '</html>';
+        $headers = 'From: info@photobee.cz' . "\r\n" .
+            'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($email, $subject, $message, $headers);
+        return App::redirect('', ['']);
     }
 }
