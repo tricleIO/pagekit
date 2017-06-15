@@ -19,29 +19,22 @@ class SlideshowPlugin implements EventSubscriberInterface
     {
         $content = $event->getContent();
         $pattern = '/\[gallery(.*?)\/]/';
-        $pattern2 = '/(\w+?)=\"(.+?)\"/';
 
         if (preg_match_all($pattern, $content, $matches, PREG_PATTERN_ORDER)) {
             foreach ($matches[1] as $key => $match) {
-                preg_match_all($pattern2, $match, $attributes, PREG_PATTERN_ORDER);
 
-                $attributes = array_merge(array_fill_keys(['id', 'showLink', 'limit'], ''),
-                array_combine($attributes[1], $attributes[2]));
-                $attributes['showLink'] = ($attributes['showLink'] === 'true') ? true : false;
+                $galleriesQuery = Gallery::where(['status = ?'], [Gallery::STATUS_PUBLISHED])->where(function ($query) {
+                    return $query->where('roles IS NULL')->whereInSet('roles', App::user()->roles, false, 'OR');
+                })->related('user');
+                $galleriesQuery->limit(3)->orderBy('date', 'DESC');
 
-                $gallery = Gallery::find($attributes['id']);
+                $galleries = $galleriesQuery->get();
 
-                $query = Image::query()->where(['gallery_id' => intval($attributes['id'])]);
-
-                if ($attributes['limit'] > 0) {
-                    $query = $query->limit(intval($attributes['limit']));
+                foreach ($galleries as $g) {
+                    $g->image = Image::query()->where(['gallery_id' => $g->id])->first();
                 }
 
-                if ($images = $query->get()) {
-                    $content = str_replace($matches[0][$key], App::view('gallery:views/slideshow.php', compact('images', 'attributes', 'gallery')), $content);
-                } else {
-                    $content = str_replace($matches[0][$key], 'Images not found', $content);
-                }
+                $content = str_replace($matches[0][$key], App::view('gallery:views/slideshow.php', compact('attributes', 'galleries')), $content);
             }
 
             $event->setContent($content);
