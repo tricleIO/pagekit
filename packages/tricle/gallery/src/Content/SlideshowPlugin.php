@@ -34,7 +34,7 @@ class SlideshowPlugin implements EventSubscriberInterface
                     $g->image = Image::query()->where(['gallery_id' => $g->id])->first();
                 }
 
-                $content = str_replace($matches[0][$key], App::view('gallery:views/slideshow.php', compact('attributes', 'galleries')), $content);
+                $content = str_replace($matches[0][$key], App::view('gallery:views/slideshow.php', compact('galleries')), $content);
             }
 
             $event->setContent($content);
