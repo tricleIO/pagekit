@@ -97,6 +97,8 @@ class SiteController
 
         $hasAccess = false;
 
+        $hasAccessSessionAttributeName = 'hasAccessToGalleryId=' . $gallery->id;
+
         if ($gallery->password != null) {
             if ($request->request->get("char1") != null
                 && $request->request->get("char2") != null
@@ -113,15 +115,17 @@ class SiteController
                     && intval($request->request->get("char6") == intval($gallery->password[5]))
                 ) {
                     $hasAccess = true;
+                    App::session()->set($hasAccessSessionAttributeName, true);
                 }
             }
         } else {
             $hasAccess = true;
         }
 
-//        if (!$hasAccess) {
-//            $images = null;
-//        }
+        if (App::session()->has($hasAccessSessionAttributeName)
+            && App::session()->get($hasAccessSessionAttributeName)) {
+            $hasAccess = true;
+        }
 
         $chosenImage = null;
         $imageOrder = intval($request->query->get("image-order"));
