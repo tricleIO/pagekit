@@ -15,7 +15,7 @@
                                     src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $gallery->image->filename) ?>"
                                     class="img-fluid" alt="">
                                 <div class="gallery__item-title">
-                                    <span class="date">22.10.2017</span>
+                                    <span class="date"></span>
                                     <?= $gallery->title ?>
                                 </div>
                             </div>
