@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <?= $view->render('head') ?>
     <link rel="stylesheet" href="/public/css/gallery.css">
 </head>
 <body>
@@ -31,12 +31,6 @@
 </header>
 
 <main>
-
-    <!-- Render widget position -->
-    <!--    --><?php //if ($view->position()->exists('sidebar')) : ?>
-    <!--        --><? //= $view->position('sidebar') ?>
-    <!--    --><?php //endif; ?>
-
     <!-- Render content -->
     <?= $view->render('content') ?>
 
