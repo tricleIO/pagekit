@@ -151,10 +151,16 @@ class SiteController
         }
         $nextImageOrder = ($imageOrder + 1) % $imageCount;
 
+        $viewName = 'gallery/gallery.php';
+
+        if ($request->query->get("detail") != null && $request->query->get("detail")) {
+            $viewName = 'gallery/galleryDetail.php';
+        }
+
         return [
             '$view' => [
                 'title' => __($gallery->title),
-                'name' => 'gallery/gallery.php',
+                'name' => $viewName,
                 'og:type' => 'article',
                 'article:published_time' => $gallery->date->format(\DateTime::ATOM),
                 'article:modified_time' => $gallery->modified->format(\DateTime::ATOM),
