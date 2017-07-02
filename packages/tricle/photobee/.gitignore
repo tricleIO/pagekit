@@ -3,3 +3,6 @@
 .DS_Store
 .idea
 *.zip
+js/*
+node_modules/
+css/
