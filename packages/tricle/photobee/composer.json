@@ -1,0 +1,18 @@
+{
+    "name": "tricle/photobee",
+    "type": "pagekit-theme",
+    "version": "1.0.3",
+    "title": "Photobee tamplate",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tricle, s.r.o.",
+            "email": "info@tricle.io",
+            "homepage": "http://tricle.io"
+        }
+    ],
+    "extra": {
+        "image": "image.jpg"
+    }
+}

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <?= $view->render('head') ?>
+    <?php $view->style('theme', 'theme:css/theme.css') ?>
     <link rel="stylesheet" href="/public/css/gallery.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 
@@ -34,9 +36,6 @@
     <!-- Render content -->
     <?= $view->render('content') ?>
 
-    <!-- Insert code before the closing body tag  -->
-    <?= $view->render('footer') ?>
-
 </main>
 
 <footer>
@@ -54,5 +53,7 @@
 </footer>
 
 <script src="/public/js/webScripts.js"></script>
+<!-- Insert code before the closing body tag  -->
+<?= $view->render('footer') ?>
 </body>
 </html>

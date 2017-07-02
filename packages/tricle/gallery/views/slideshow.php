@@ -9,7 +9,7 @@
                             <img
                                 src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $gallery->image->filename) ?>"
                                 alt="" class="img-fluid"/>
-                            <div class="gallery__item-title">
+                            <div class="gallery__item-title <?php if(!empty($gallery->password)) echo 'gallery__item--locked';?>">
                                 <span class="date"></span>
                                 <?= $gallery->title ?>
                             </div>

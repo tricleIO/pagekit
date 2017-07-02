@@ -151,10 +151,16 @@ class SiteController
         }
         $nextImageOrder = ($imageOrder + 1) % $imageCount;
 
+        $viewName = 'gallery/gallery.php';
+
+
+        if ($request->query->get("detail") != null && $request->query->get("detail")) {
+            $viewName = 'gallery/galleryDetail.php';
+        }
         return [
             '$view' => [
                 'title' => __($gallery->title),
-                'name' => 'gallery/gallery.php',
+                'name' => $viewName,
                 'og:type' => 'article',
                 'article:published_time' => $gallery->date->format(\DateTime::ATOM),
                 'article:modified_time' => $gallery->modified->format(\DateTime::ATOM),
@@ -186,15 +192,12 @@ class SiteController
         $placeAndDate = $request->request->get("place-and-date");
         $occasion = $request->request->get("subject");
 
-        $to = 'jan.merta@tricle.io';
+        $to = $request->request->get("email");
         $subject = 'Nová objednávka';
         $message = $message =
             '<html>' .
-            '<head>
-                <title>Nová objednávka</title>
-                </head>' .
             '<body>' .
-            '<h1>Nová objednávka</h1><p>' .
+            '<h1>Rekapitulace poptávky</h1><p>' .
             '<b>Jméno:</b> ' . $name .
             '<br><b>E-mail:</b> ' . $email .
             '<br><b>Telefon:</b> ' . $tel .
@@ -203,20 +206,18 @@ class SiteController
             '</p></body>';
         '</html>';
         $headers = 'From: info@photobee.cz' . "\r\n" .
-            'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+            'Content-type: text/html; charset=utf-8' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
-        mail($to, $subject, $message, $headers);
-//        mail("martin.plz@centrum.cz", $subject, $message, $headers);
+        mail("info@photobee.cz", $subject, $message, $headers);
 
-        $subject = 'Objednávka';
+        $subject = 'Potvrzení poptávky';
         $message = $message =
             '<html>' .
             '<head>
-                <title>Objednávka</title>
                 </head>' .
             '<body>' .
-            '<h1>Objednávka</h1><p>' .
+            '<h1>Rekapitulace poptávky</h1><p>' .
             'Vaše objednávka byla přijata do systému, vyčkejte až se Vám ozveme.</p><p>' .
             '<b>Rekapitulace:</b><br>' .
             '<b>Jméno:</b> ' . $name .
@@ -227,7 +228,7 @@ class SiteController
             '</p></body>';
         '</html>';
         $headers = 'From: info@photobee.cz' . "\r\n" .
-            'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+            'Content-type: text/html; charset=utf-8' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
         mail($email, $subject, $message, $headers);

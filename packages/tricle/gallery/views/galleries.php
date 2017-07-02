@@ -1,10 +1,9 @@
-<main>
-    <section class="gallery text-center">
-        <h2 class="title pb-3">galerie</h2>
-        <div class="container-fluid">
-            <?php if (!$galleries): ?>
-                <h3 class="uk-h1 uk-text-muted uk-text-center"><?php echo __('No Galleries found') ?></h3>
-            <?php else: ?>
+<section class="gallery text-center">
+    <h2 class="title pb-3">galerie</h2>
+    <div class="container-fluid">
+        <?php if (!$galleries): ?>
+            <h3 class="uk-h1 uk-text-muted uk-text-center"><?php echo __('No Galleries found') ?></h3>
+        <?php else: ?>
             <div class="row">
                 <?php foreach ($galleries as $gallery): ?>
                     <div class="col-4">
@@ -23,6 +22,7 @@
                     </div>
                 <?php endforeach; ?>
             </div>
-            <?php endif; ?>
-        </div>
-    </section>
+        <?php endif; ?>
+        <br><br><br><br><br>
+    </div>
+</section>

@@ -8,7 +8,7 @@ return [
     /**
      * Unique name that identifies your theme.
      */
-    'name' => 'mytheme',
+    'name' => 'photobee',
 
     /**
      * Define menu positions.
