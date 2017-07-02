@@ -1,0 +1,25 @@
+.contact {
+  background-color: $orange;
+  padding: $_30 0;
+  small {
+    font-size: $_18;
+  }
+  .title {
+    font-size: $_50;
+    padding: $_24 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+  p,b {
+    font-size: $_24;
+    text-transform: uppercase;
+  }
+  .form-control {
+    text-align: center;
+    color: $black;
+    &::-webkit-input-placeholder {
+      text-align: center;
+    }
+  }
+}

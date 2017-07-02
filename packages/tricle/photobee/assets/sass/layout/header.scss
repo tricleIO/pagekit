@@ -1,0 +1,42 @@
+header {
+  position: fixed;
+  left:0;
+  right: 0;
+  width: 100%;
+  padding: $_15 0;
+  background-color: $orange;
+  z-index: 2000;
+  .container-fluid {
+    width: 100%;
+    .row {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .logo {
+    display: block;
+    overflow: hidden;
+  }
+  .main-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: $_10 $_15;
+    }
+
+    a {
+      color: $black;
+      font-size: $_14;
+      font-weight: $font-weight-light;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+  }
+
+}

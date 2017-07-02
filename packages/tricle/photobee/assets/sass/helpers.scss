@@ -1,0 +1,61 @@
+br {
+    &.brb-xs {
+        display: block;
+        @include media-breakpoint-up(sm) {
+            display: none;
+        }
+    }
+    &.brb-sm {
+        display: none;
+        @include media-breakpoint-up(sm) {
+            display: block;
+        }
+    }
+    &.brb-md {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+    &.brb-lg {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+    &.brb-xl {
+        display: none;
+        @include media-breakpoint-up(xl) {
+            display: block;
+        }
+    }
+    &.no-brb {
+        @include media-breakpoint-up(xs) {
+            display: block;
+        }
+    }
+
+    &.no-brb-sm {
+        @include media-breakpoint-up(sm) {
+            display: block;
+        }
+    }
+
+    &.no-brb-md {
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    &.no-brb-lg {
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+    &.no-brb-xl {
+        @include media-breakpoint-up(xl) {
+            display: block;
+        }
+    }
+
+
+}

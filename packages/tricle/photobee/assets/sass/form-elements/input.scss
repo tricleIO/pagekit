@@ -1,0 +1,53 @@
+input {
+
+    &.form-control {
+        background-color: $white;
+        outline: none;
+        border: none;
+        color: $gray-light;
+        font-family: $font-family-open-sans;
+        &::-webkit-input-placeholder {
+            @extend %font-size-base;
+            text-align: left;
+            color: $gray-light;
+            opacity: 1;
+            font-family: $font-family-open-sans;
+        }
+
+        &:focus {
+            background-color: $white;
+        }
+
+        &--bg-gray-l {
+            background-color: $gray-lighter;
+            &:focus {
+                background-color: $gray-lighter;
+            }
+        }
+
+        +.input-group-addon {
+            background-color: $gray-lightest;
+            border:none;
+        }
+    }
+
+
+
+    &.form-control-lg {
+        padding: .875rem $input-padding-x-lg;
+        font-size: $font-size-base;
+        color:#e3e3e3;
+        @include media-breakpoint-up(md) {
+            padding: $input-padding-y-lg  + 0.032rem $input-padding-x-lg;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding: $input-padding-y-lg $input-padding-x-lg;
+            font-size: $font-size-sm;
+        }
+
+        @include border-radius($input-border-radius-lg);
+    }
+
+
+}

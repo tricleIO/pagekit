@@ -1,0 +1,46 @@
+.about {
+
+  padding: $_160 0;
+  background-color: #f5f6f8;
+
+
+
+  small {
+    font-size: $_18;
+  }
+  .title {
+    font-size: $_50;
+    padding: $_24 0;
+  }
+  p {
+    font-size: $_24;
+  }small {
+    font-size: $_18;
+  }
+  .title {
+    font-size: $_50;
+    padding: $_24 0;
+  }
+  p {
+    font-size: $_24;
+  }
+
+  &-text {
+    font-size: $_13;
+
+    p {
+      font-size: inherit;
+    }
+  }
+
+  .btn {
+    color:$orange;
+    text-transform: uppercase;
+    font-weight: $font-weight-light;
+    &:hover {
+      background-color: $orange;
+      color:$black;
+    }
+  }
+
+}

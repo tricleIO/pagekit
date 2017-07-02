@@ -12,6 +12,7 @@ node_modules
 .DS_Store
 .idea
 
-/packages/
+/packages/*
 !/packages/tricle
 !/packages/tricle/
+!packages/tricle

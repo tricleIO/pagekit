@@ -1,0 +1,40 @@
+.login {
+  display: flex;
+  background-color: $black;
+  width: 100%;
+  height: calc(100vh - 71px);
+  justify-content: center;
+  align-items: center;
+
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background-size: cover;
+    background-position: center;
+    filter:blur(5px);
+  }
+
+  &__form {
+    max-width: 380px;
+    [class^='col-'] {
+      padding: 0 8px;
+    }
+  }
+  .btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input[type=number]::-webkit-inner-spin-button,
+   input[type=number]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     margin: 0;
+   }
+}

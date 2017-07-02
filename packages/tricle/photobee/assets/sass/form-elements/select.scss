@@ -1,0 +1,19 @@
+select {
+    &.form-control {
+        font-family: $font-family-open-sans;
+        color: $gray-light;
+        &:placeholder {
+            color: $gray-light;
+            font-family: $font-family-open-sans;
+        }
+        &::-webkit-input-placeholder {
+            color: $gray-light;
+            font-family: $font-family-open-sans;
+        }
+    }
+
+
+    &.form-control-lg {
+        @extend %font-size-base;
+    }
+}

@@ -1,0 +1,16 @@
+footer {
+  padding-top: $_20;
+  background-color: #f5f6f8;
+  .black-box {
+    position: relative;
+    margin-top: $_20;
+    height: $_50;
+    background-color: $black;
+    .bee {
+      position: absolute;
+      bottom:0;
+      right: $_90;
+      max-width: 150px;
+    }
+  }
+}

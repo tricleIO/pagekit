@@ -1,0 +1,23 @@
+.visual {
+  position: relative;
+  height: 70vh;
+  &__text {
+    color: $black;
+    font-size: $_45;
+    font-weight: $font-weight-light;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  .container, .row {
+    height: 100%;
+  }
+  .row {
+    display: flex;
+    align-items:center;
+  }
+  .bee {
+    position: absolute;
+    bottom:-140px;
+    left: 35%;
+  }
+}
