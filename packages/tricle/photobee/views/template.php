@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <?= $view->render('head') ?>
     <?php $view->style('theme', 'theme:css/theme.css') ?>
-    <link rel="stylesheet" href="/public/css/gallery.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 

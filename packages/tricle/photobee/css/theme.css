@@ -9817,7 +9817,7 @@ footer {
     appearance: none;
     margin: 0; }
 
-.uk-article-title {
-  display: none; }
+h1.uk-article-title {
+  display: none !important; }
 
 /*# sourceMappingURL=theme.css.map*/

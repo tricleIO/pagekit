@@ -29,5 +29,8 @@
     "vue-loader": "^8.2.0",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.9"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

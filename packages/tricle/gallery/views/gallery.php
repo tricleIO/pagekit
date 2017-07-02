@@ -58,20 +58,7 @@
             </div>
         </form>
     </section>
-    <script >
-        $(".lock-char").keyup(function () {
-            console.log(this);
-            if (this.value.length == this.maxLength) {
-                $(this).parent().next().find('.lock-char').focus().select();;
-                console.log( $(this).parent().next().find('.lock-char'));
-            }
-        });
-        $(".lock-char").focus(function() {
-            if (this.value.length > 0) {
-                this.select();
-            }
-        })
-    </script>
+
 <?php endif; ?>
 
 
