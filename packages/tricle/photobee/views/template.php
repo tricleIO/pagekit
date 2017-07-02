@@ -54,6 +54,7 @@
 
 <script src="/public/js/webScripts.js"></script>
 <!-- Insert code before the closing body tag  -->
+<?php $view->script('theme', 'theme:js/theme.js') ?>
 <?= $view->render('footer') ?>
 </body>
 </html>
