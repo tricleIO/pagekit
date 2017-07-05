@@ -1,50 +1,78 @@
 .more-info {
     position: relative;
     background-color: $orange;
-    padding: $_160 0;
+    padding: $_32 0;
+    @include media-breakpoint-up(sm) {
+        padding: $_160 0;
+    }
     .bee {
         position: absolute;
         top: 0;
         right: $_100 * 2;
         transform: translateY(-50%);
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
     small {
         font-size: $_18;
     }
     .title {
-        font-size: $_50;
+        font-size: $_30;
         padding: $_24 0;
         line-height: 1.4;
         text-transform: uppercase;
         text-decoration: underline;
+        @include media-breakpoint-up(md){
+            font-size: $_50;
+        }
     }
     p,
     b {
-        font-size: $_24;
+        font-size: $_13;
         text-transform: uppercase;
+        @include media-breakpoint-up(md){
+            font-size: $_24;
+        }
     }
     .bee-slide {
         position: relative;
         .bee {
+            display: none;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             left: -$_30;
             max-width: 200px;
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
         }
     }
     .bee-item {
         position: relative;
         display: flex;
         align-items: center;
-        max-width: 289.98px;
-        width: 100%;
-        height: 329.21px;
+        max-width: 247.98px;
+        width: 86%;
+        height: 288px;
+        margin:0 auto;
+        @include media-breakpoint-up(md) {
+            width: 100%;
+            height: 243px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 329.21px;
+        }
+
+
         transition: transform 0.3s ease;
         background-image: url('../images/bee-item-bg.png');
         background-repeat: no-repeat;
         background-size: contain;
         .text {
+            width: 90%;
             color: $black;
             text-align: center;
             position: absolute;
@@ -76,19 +104,26 @@
     min-width: 300px;
     background-color: rgba(#090909, .9);
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    top:0;
     left: 0;
     right: 0;
     z-index: 2002;
     color: $orange;
+    @include media-breakpoint-up(md) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     .row {
         display: flex;
         align-items: center;
     }
     &-content {
+        min-height: 100vh;
+        max-height: 100vh;
         padding: $_60 0 $_80 0;
         font-size: 18px;
+        overflow-y: auto;
     }
     .close-modal {
         display: block;

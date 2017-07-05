@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <?= $view->render('head') ?>
+    <?= $view->render('head') ?>    
     <?php $view->style('theme', 'theme:css/theme.css') ?>
 </head>
 <body>
@@ -11,7 +12,7 @@
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3">
+            <div class="col-6 col-md-3">
                 <!-- Render logo or title with site URL -->
                 <a href="<?= $view->url()->get() ?>" class="logo">
                     <?php if ($logo = $params['logo']) : ?>
@@ -21,7 +22,7 @@
                     <?php endif ?>
                 </a>
             </div>
-            <div class="col-9">
+            <div class="col-6 col-md-9">
                 <!-- Render menu position -->
                 <?php if ($view->menu()->exists('main')) : ?>
                     <?= $view->menu('main', 'menu-navbar.php') ?>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <?php foreach ($images as $image): ?>
-                <div class="col-4">
+                <div class="col-12 col-sm-6 col-md-4">
                     <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">
                         <div class="gallery__item">
                             <img

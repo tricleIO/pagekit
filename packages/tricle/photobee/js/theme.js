@@ -65,6 +65,12 @@
 	            this.select();
 	        }
 	    });
+	
+	    document.getElementById('openMenu').onclick = function(){
+	        this.classList.toggle('open')
+	        document.getElementsByClassName('main-menu')[0].classList.toggle("open");
+	    };
+	
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 

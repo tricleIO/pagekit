@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <?php foreach ($images as $image): ?>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-md-4">
                         <div class="gallery__item">
                             <a href="<?= $view->url()->getStatic('public/tricle-gallery/' . $image->filename) ?>"
                                data-uk-lightbox="{group:'gallery'}" title="<?= $image->title ?>">

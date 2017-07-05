@@ -2,22 +2,34 @@
   background-color: $orange;
   padding: $_30 0;
   small {
-    font-size: $_18;
+    font-size: $_14;
+    @include media-breakpoint-up(sm) {
+      font-size: $_18;
+    }
   }
   .title {
-    font-size: $_50;
+    font-size: $_18;
     padding: $_24 0;
     line-height: 1.4;
     text-transform: uppercase;
     text-decoration: underline;
+    @include media-breakpoint-up(sm) {
+      font-size: $_50;
+    }
   }
   p,b {
-    font-size: $_24;
+    font-size: $_14;
     text-transform: uppercase;
+    @include media-breakpoint-up(sm) {
+      font-size: $_24;
+    }
   }
   .form-control {
     text-align: center;
     color: $black;
+    border-radius: 0;
+    border:1px solid $black;
+
     &::-webkit-input-placeholder {
       text-align: center;
     }

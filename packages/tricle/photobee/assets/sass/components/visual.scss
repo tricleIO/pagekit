@@ -1,12 +1,18 @@
 .visual {
   position: relative;
   height: 70vh;
+  @include media-breakpoint-down(md) {
+    background-position: 33% center;
+  }
   &__text {
     color: $black;
-    font-size: $_45;
+    font-size: $_18;
     font-weight: $font-weight-light;
     text-decoration: underline;
     text-transform: uppercase;
+    @include media-breakpoint-up(md) {
+      font-size: $_45;
+    }
   }
   .container, .row {
     height: 100%;
@@ -17,7 +23,11 @@
   }
   .bee {
     position: absolute;
+    display: none;
     bottom:-140px;
     left: 35%;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
   }
 }

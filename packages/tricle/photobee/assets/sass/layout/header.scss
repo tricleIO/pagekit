@@ -6,6 +6,9 @@ header {
   padding: $_15 0;
   background-color: $orange;
   z-index: 2000;
+  @include media-breakpoint-down(md) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  }
   .container-fluid {
     width: 100%;
     .row {
@@ -19,6 +22,17 @@ header {
     overflow: hidden;
   }
   .main-menu {
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      display: block;
+      top:52px;
+      left:-260px;
+      bottom:0;
+      transition: left 0.4s ease;
+      background-color: black;
+      min-width: 260px;
+    }
+
     display: flex;
     justify-content: flex-end;
     margin: 0;
@@ -30,11 +44,66 @@ header {
     }
 
     a {
-      color: $black;
+      color: $white;
       font-size: $_14;
       font-weight: $font-weight-light;
       text-transform: uppercase;
       text-decoration: underline;
+
+      @include media-breakpoint-up(lg) {
+        color: $black;
+      }
+
+    }
+
+    &.open {
+      left:0;
+
+    }
+
+  }
+
+  .icon-menu {
+    position: relative;
+    background: black;
+    width: 25px;
+    height: 4px;
+    display: block;
+    margin-left: auto;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+    &:after, &:before {
+      position: absolute;
+      content: '';
+      width: 25px;
+      height: 4px;
+      background-color: black;
+      transition: all 0.4s ease;
+    }
+
+    &:after {
+      top:-7px;
+      right:0;
+    }
+
+    &:before {
+      right:0;
+      bottom:-7px;
+    }
+
+    &.open {
+      background-color: transparent;
+      &:before {
+        transform:rotateZ(45deg);
+        bottom:0;
+      }
+
+      &:after {
+        transform:rotateZ(-45deg);
+        top:0;
+      }
+
     }
 
   }

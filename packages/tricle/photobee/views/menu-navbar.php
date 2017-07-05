@@ -1,5 +1,6 @@
 <?php if ($root->getDepth() === 0) : ?>
-<ul class="main-menu">
+<i id="openMenu" class="icon icon-menu" onclick="showMenu();"></i>
+<ul id="mainMenu" class="main-menu">
     <?php endif ?>
 
     <?php foreach ($root->getChildren() as $node) : ?>
