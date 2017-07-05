@@ -6,7 +6,7 @@
         <?php else: ?>
             <div class="row">
                 <?php foreach ($galleries as $gallery): ?>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-md-4">
                         <a class="uk-thumbnail uk-overlay-toggle"
                            href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">
                             <div class="gallery__item">
@@ -14,8 +14,8 @@
                                     src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $gallery->image->filename) ?>"
                                     class="img-fluid" alt="">
                                 <div class="gallery__item-title">
-                                    <span class="date"></span>
-                                    <?= $gallery->title ?>
+                                    <!--<span class="date"></span>-->
+                                    <p><?= $gallery->title ?></p>
                                 </div>
                             </div>
                         </a>

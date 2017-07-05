@@ -70,7 +70,10 @@
     align-items: center;
     .icon {
       color:$white;
-      font-size:$_40;
+      font-size:$_20;
+      @include media-breakpoint-up(sm){
+        font-size:$_40;
+      }
     }
   }
 

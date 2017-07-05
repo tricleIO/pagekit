@@ -3,10 +3,10 @@
         <h1 class="title pb-3"><?= $gallery->title ?></h1>
         <div class="container-fluid">
             <div class="row gallery__slider">
-                <div class="col-1">
+                <div class="col-2">
                     <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>?detail=true&image-order=<?= $prevImageOrder ?>"><i class="icon icon-chevron-left"></i></a>
                 </div>
-                <div class="col-10">
+                <div class="col-8">
                     <div class="">
                         <img src="<?= $view->url()->getStatic('public/tricle-gallery/' . $chosenImage->filename) ?>" class="img-fluid" alt="">
                         <div class="gallery__item-title">
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-1">
+                <div class="col-2">
                     <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>?detail=true&image-order=<?= $nextImageOrder ?>"><i class="icon icon-chevron-right"></i></a>
                 </div>
             </div>
