@@ -19,8 +19,11 @@
                     <a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>?detail=true&image-order=<?= $nextImageOrder ?>"><i class="icon icon-chevron-right"></i></a>
                 </div>
             </div>
-            <br><br><br><br><br><br>
-
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">Zpět do galerie</a></p>
+                </div>
+            </div>
         </div>
     </section>
 <?php else: ?>
