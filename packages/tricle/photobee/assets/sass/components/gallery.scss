@@ -77,4 +77,18 @@
     }
   }
 
+  &__link {
+    margin-top: 15px;
+
+    a {
+      color: $orange;
+      font-size: $_14;
+
+      &:hover {
+        color: $orange;
+        text-decoration: underline;
+      }
+    }
+  }
+
 }

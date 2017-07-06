@@ -9589,6 +9589,22 @@ footer {
       @media (max-width: 991px) {
         footer .black-box .bee {
           display: none; } }
+    footer .black-box .site-info {
+      padding-top: 10px;
+      color: #fff;
+      font-size: 0.75rem; }
+      footer .black-box .site-info a {
+        color: #fff;
+        text-decoration: underline; }
+        footer .black-box .site-info a:hover {
+          color: #fff;
+          text-decoration: none; }
+        footer .black-box .site-info a.author {
+          color: #c9302c;
+          text-decoration: none; }
+          footer .black-box .site-info a.author:hover {
+            color: #c9302c;
+            text-decoration: underline; }
 
 .visual {
   position: relative;
@@ -9596,6 +9612,14 @@ footer {
   @media (max-width: 991px) {
     .visual {
       background-position: 33% center; } }
+  @media (max-width: 767px) {
+    .visual {
+      min-height: 21.875rem;
+      max-height: 21.875rem; } }
+  @media (max-width: 575px) {
+    .visual {
+      min-height: 13.75rem;
+      max-height: 13.75rem; } }
   .visual__text {
     color: #000;
     font-size: 1.125rem;
@@ -9616,6 +9640,14 @@ footer {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+    @media (max-width: 575px) {
+      .visual .row {
+        -webkit-box-align: end;
+        -webkit-align-items: flex-end;
+            -ms-flex-align: end;
+                align-items: flex-end; }
+        .visual .row .visual__text {
+          padding-bottom: 1.25rem; } }
   .visual .bee {
     position: absolute;
     display: none;
@@ -9733,16 +9765,21 @@ footer {
     width: 86%;
     height: 288px;
     margin: 0 auto;
+    margin-bottom: 2rem;
     transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
     background-image: url(597dbe3cfa8394e4426c2f47f044e370.png);
     background-repeat: no-repeat;
     background-size: contain; }
+    @media (min-width: 576px) {
+      .more-info .bee-item {
+        height: 260px; } }
     @media (min-width: 768px) {
       .more-info .bee-item {
         width: 100%;
-        height: 243px; } }
+        height: 243px;
+        margin-bottom: 0; } }
     @media (min-width: 992px) {
       .more-info .bee-item {
         height: 329.21px; } }
@@ -9873,6 +9910,14 @@ footer {
       @media (min-width: 576px) {
         .gallery__slider .icon {
           font-size: 2.5rem; } }
+  .gallery__link {
+    margin-top: 15px; }
+    .gallery__link a {
+      color: #ffcd00;
+      font-size: 0.875rem; }
+      .gallery__link a:hover {
+        color: #ffcd00;
+        text-decoration: underline; }
 
 .contact {
   background-color: #ffcd00;

@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <p><a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">Zpět do galerie</a></p>
+                    <p class="gallery__link"><a href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) ?>">Zpět do galerie</a></p>
                 </div>
             </div>
         </div>

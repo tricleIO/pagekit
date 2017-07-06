@@ -15,5 +15,31 @@ footer {
         display: none;
       }
     }
+
+    .site-info {
+      padding-top: 10px;
+      color: $white;
+      font-size: $_12;
+
+      a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
+
+        &.author{
+          color: #c9302c;
+          text-decoration: none;
+
+          &:hover {
+            color: #c9302c;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
