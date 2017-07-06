@@ -48,6 +48,10 @@
         </div>
     </div>
     <div class="black-box">
+        <div class="container">
+            <p>Tvorba webu <a href="http://tricle.io">Tricle</a>. <a href="/admin" class="to-admin">Administrace</a></p>
+
+        </div>
         <img src="/public/img/bee-4.png" class="bee" alt="">
     </div>
 </footer>
