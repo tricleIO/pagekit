@@ -4,6 +4,14 @@
   @include media-breakpoint-down(md) {
     background-position: 33% center;
   }
+  @include media-breakpoint-down(sm) {
+   min-height: $_100*3.5;
+   max-height: $_100*3.5;
+  }
+  @include media-breakpoint-down(xs) {
+    min-height: $_100*2.2;
+    max-height: $_100*2.2;
+  }
   &__text {
     color: $black;
     font-size: $_18;
@@ -20,6 +28,13 @@
   .row {
     display: flex;
     align-items:center;
+
+    @include media-breakpoint-down(xs) {
+      align-items: flex-end;
+      .visual__text {
+        padding-bottom: $_20;
+      }
+    }
   }
   .bee {
     position: absolute;
