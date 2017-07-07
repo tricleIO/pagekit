@@ -5,7 +5,7 @@ header {
   width: 100%;
   padding: $_15 0;
   background-color: $orange;
-  z-index: 2000;
+  z-index: 900;
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.22);
   }

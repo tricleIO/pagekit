@@ -9480,7 +9480,7 @@ header {
   width: 100%;
   padding: 0.9375rem 0;
   background-color: #ffcd00;
-  z-index: 2000; }
+  z-index: 900; }
   @media (max-width: 991px) {
     header {
       border-bottom: 1px solid rgba(0, 0, 0, 0.22); } }
@@ -9805,19 +9805,33 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  z-index: 2001;
+  z-index: 998;
   overflow: hidden; }
 
+.bee-modal-wrapper {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  vertical-align: middle;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  top: 0;
+  left: 0;
+  right: 0; }
+
 .bee-modal {
+  width: 100%;
   min-width: 300px;
   background-color: rgba(9, 9, 9, 0.9);
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
-  z-index: 2002;
-  color: #ffcd00; }
+  top: 20%;
+  z-index: 999;
+  color: #ffcd00;
+  margin-top: auto; }
   @media (min-width: 768px) {
     .bee-modal {
       top: 50%;
@@ -9833,8 +9847,6 @@ footer {
         -ms-flex-align: center;
             align-items: center; }
   .bee-modal-content {
-    min-height: 100vh;
-    max-height: 100vh;
     padding: 3.75rem 0 5rem 0;
     font-size: 18px;
     overflow-y: auto; }
