@@ -135,7 +135,6 @@
         padding-top: 15px;
     }
     @include media-breakpoint-up(md) {
-        padding-top: 0;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -146,9 +145,10 @@
     }
     &-content {
         position: relative;
-        min-height: 1px;
-        height: 100vh;
-        //max-height: 100vh;
+        @include media-breakpoint-down(md) {
+            min-height: 1px;
+            height: 100vh;
+        }
         padding: $_60 0 $_80 0;
         font-size: 18px;
         overflow-y: auto;
