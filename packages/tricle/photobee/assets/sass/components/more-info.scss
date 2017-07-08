@@ -108,9 +108,7 @@
 }
 
 .bee-modal-wrapper {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+   display: none;
     vertical-align: middle;
     -ms-flex-align: center;
     -webkit-align-items: center;
@@ -128,13 +126,16 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 20%;
     z-index: 999;
-    //z-index: 900;
     color: $orange;
     margin-top: auto;
-
+    top:0;
+    padding-top: 0;
+    @include media-breakpoint-up(sm) {
+        padding-top: 15px;
+    }
     @include media-breakpoint-up(md) {
+        padding-top: 0;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -144,7 +145,9 @@
         align-items: center;
     }
     &-content {
-        //min-height: 100vh;
+        position: relative;
+        min-height: 1px;
+        height: 100vh;
         //max-height: 100vh;
         padding: $_60 0 $_80 0;
         font-size: 18px;
@@ -157,4 +160,10 @@
         font-size: $_18;
         text-transform: uppercase;
     }
+}
+
+.dspf {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
