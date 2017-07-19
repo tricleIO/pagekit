@@ -32,29 +32,31 @@
     <main>
         <section class="login" >
             <div class="bg" style="background-image: url('../assets/images/login-bg.jpg');"></div>
-            <form action="" class="login__form row">
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
-                </div>
-                <div class="col-12 text-center mt-4 mb-4">
-                    <button type="submit" class="btn btn-outline-primary btn-inline">Odeslat</button>
-                </div>
-            </form>
+            <div class="container-fluid">
+                <form action="" class="login__form row">
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="char-1">
+                    </div>
+                    <div class="col-12 text-center mt-4 mb-4">
+                        <button type="submit" class="btn btn-outline-primary btn-inline">Odeslat</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 

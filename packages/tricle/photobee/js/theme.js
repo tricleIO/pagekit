@@ -77,15 +77,15 @@
 	    $('main').on('click','.bee-item',function (e) {
 	        let modalId = $(this).data('modal');
 	        $('.bee-modal-wrapper').hide();
-	        $('.bee-modal-wrapper#'+modalId).show();
+	        $('.bee-modal-wrapper#'+modalId).css('display','flex').toggleClass('dspf');
 	    });
 	
 	    $('main').on('click','.close-modal',function (e) {
-	        $(this).closest('.bee-modal-wrapper').hide();
+	        $(this).closest('.bee-modal-wrapper').hide().toggleClass('dspf');
 	    })
 	
 	    $('main').on('click','.modal-overlay',function (e) {
-	        $(this).closest('.bee-modal-wrapper').hide();
+	        $(this).closest('.bee-modal-wrapper').hide().toggleClass('dspf');
 	    })
 	
 	

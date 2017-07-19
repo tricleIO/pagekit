@@ -48,7 +48,7 @@ module.exports = [
                 {test: /\.jsx?$/, loader: 'babel', include: /app|node_modules\/bootstrap/}
             ]
         },
-        postcss: [ autoprefixer({ browsers: ['> 1%','last 2 version', 'ie 10','ios 7.1','android 4.4'] }) ]
+        postcss: [ autoprefixer({ browsers: ['> 2%','last 3 version', 'ie 10','ios 7.1','android 4.4'] }) ]
     },
     {
         devtool: 'source-map',
