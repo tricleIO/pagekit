@@ -1,6 +1,6 @@
 <?php if ($hasAccess) : ?>
     <section class="gallery text-center">
-        <h2 class="title pb-3">galerie</h2>
+        <h2 class="title pb-3">galerie - <?= $gallery->title ?></h2>
         <div class="container-fluid">
             <?php if (!$images): ?>
                 <h3 class="uk-h1 uk-text-muted uk-text-center"><?php echo __('No Galleries found') ?></h3>
@@ -8,17 +8,13 @@
                 <div class="row">
                     <?php $it = 0; ?>
                     <?php foreach ($images as $image): ?>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-12 col-sm-6 col-md-3">
                             <a class="uk-thumbnail uk-overlay-toggle"
                                href="<?= $view->url('@gallery/id', ['id' => $gallery->id]) . "?detail=true&image-order=" . $it ?>">
                                 <div class="gallery__item">
                                     <img
                                         src="<?= $view->url()->getStatic('public/tricle-gallery/thumbnails/tn_' . $image->filename) ?>"
                                         class="img-fluid" alt="">
-                                    <div class="gallery__item-title">
-                                        <!--<span class="date"></span>-->
-                                        <p><?= $gallery->title ?></p>
-                                    </div>
                                 </div>
                             </a>
                         </div>

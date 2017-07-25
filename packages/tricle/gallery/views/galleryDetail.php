@@ -9,10 +9,6 @@
                 <div class="col-8">
                     <div class="">
                         <img src="<?= $view->url()->getStatic('public/tricle-gallery/' . $chosenImage->filename) ?>" class="img-fluid" alt="">
-                        <div class="gallery__item-title">
-                            <span class="date"></span>
-                            <?= $chosenImage->title ?>
-                        </div>
                     </div>
                 </div>
                 <div class="col-2">
